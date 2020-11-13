@@ -97,7 +97,7 @@ class TLine(object):
     else:
       self.intervalnum += 1
       self.duedate = now + timedelta(days=self.interval)
-      self.interval = (6 if self.intervalnum == 2 else ceil(self.interval + self.ef))
+      self.interval = (6 if self.intervalnum == 2 else ceil(self.interval * self.ef))
     self.ef = max(self.ef + 0.1 - (5 - q) * (0.08 + 0.02 * (5 - q)), 1.3)
 
 # Check arguments for illegal values.
